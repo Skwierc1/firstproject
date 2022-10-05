@@ -2,4 +2,5 @@
 
 print("Hello, World!")
 print("Changing the code ensure development branch is set up correctly.") #JS
+print("hi")
 
