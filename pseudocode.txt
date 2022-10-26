@@ -1,19 +1,19 @@
 
 
 Point Class
-	tuple (points)
+	list (point-1, point-2,,,,,,, point-n)
 
 Line Segment Class (subset of point class)
 	Head point
 	End point
 	
 Circle Class (subset of point class)
-	(X value
-	Y value)
+	center point
 	Radius 
 	
-plane Class 
-	name of the plane
+space Class
+	name of the space
+	dimension of the space
 	list of points
 	list of lines
 	list of circles
