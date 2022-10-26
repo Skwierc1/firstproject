@@ -21,6 +21,7 @@ space Class
 	add point func()
 	add lines func()
 	add circles func()
+	
 
 Main()
 	while ( true )
