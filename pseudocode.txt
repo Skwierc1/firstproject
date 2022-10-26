@@ -23,7 +23,7 @@ Main()
 		
 	Get list/array of points, line, and circle for the plane
 	
-	Show list
+	ask user
 	(
 			i. Create point
 			ii. Create line
