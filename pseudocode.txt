@@ -13,12 +13,17 @@ Circle Class (subset of point class)
 	Y value)
 	Radius 
 	
+plane Class 
+	name of the plane
+	list of points
+	list of lines
+	list of circles
 
 Main()
 	while ( true )
 		Ask user if they want to use already created plane or create new plane
 		If (use already created plane)
-			Show a list and let user select plane
+			Show a list of planes and let user select a plane
 		Else
 			Let user create new plane
 
