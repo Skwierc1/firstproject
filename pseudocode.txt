@@ -27,16 +27,16 @@ Main()
 		while (true) 
 			ask user
 			(
-					1. Create point
-					2. Create line
-					3. Create circle
-					4. Line segment intersection
-					5. Closest pair of points
-					6. Convex hull
-					7. Largest empty circle
-					8. Display all entities
-					9. (possibly) Change working plane
-					10. exit
+				1. Create point
+				2. Create line
+				3. Create circle
+				4. Line segment intersection
+				5. Closest pair of points
+				6. Convex hull
+				7. Largest empty circle
+				8. Display all entities
+				9. (possibly) Change working plane
+				10. exit
 			)
 
 			If (1)
@@ -62,7 +62,7 @@ Main()
 
 
 Line Segment Intersection function()
-
+	
 
 Closest Pair of Pints function()
 
