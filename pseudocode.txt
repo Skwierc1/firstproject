@@ -62,7 +62,7 @@ Main()
 Line Segment Intersection function()
 
 
-Closest Pair of Pints function()
+Closest Pair of Points function()
 
 
 Convex Hull function()
