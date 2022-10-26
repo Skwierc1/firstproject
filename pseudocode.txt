@@ -1,8 +1,7 @@
 
 
 Point Class
-	X value
-	Y value
+	tuple (points)
 
 Line Segment Class (subset of point class)
 	Head point
@@ -73,6 +72,7 @@ Closest Pair of Pints function()
 
 
 Convex Hull function()
+
 
 Largest empty circle function()
 
