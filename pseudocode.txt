@@ -24,7 +24,7 @@ Main()
 		If (use already created plane)
 			Show a list of planes and let user select a plane
 		Else
-			Let user create new plane
+			Let user create new plane with dimension
 
 		Get list/array of points, line, and circle for the plane
 		
