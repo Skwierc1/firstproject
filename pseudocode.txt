@@ -15,57 +15,61 @@ Circle Class (subset of point class)
 	
 
 Main()
-	Ask user if they want to use already created plane or create new plane
-	If (use already created plane)
-		Show a list and let user select plane
-	Else
-		Let user create new plane
+	while ( true )
+		Ask user if they want to use already created plane or create new plane
+		If (use already created plane)
+			Show a list and let user select plane
+		Else
+			Let user create new plane
+
+		Get list/array of points, line, and circle for the plane
 		
-	Get list/array of points, line, and circle for the plane
-	
-	ask user
-	(
-			i. Create point
-			ii. Create line
-			iii. Create circle
-			iv. Line segment intersection
-			v. Closest pair of points
-			vi. Convex hull
-			vii. Largest empty circle
-			viii. Display all entities
-			ix. (possibly) Change working plane
-			x. exit
-	)
-	
-	If (1)
-		Let user type x and y value
-	If(2)
-		Let user type two x and y values
-	If(3)
-		Let user type x and y value and radius
-	If(4)
-	
-	If(5)
-	
-	If(6)
-	
-	If(7)
-	
-	If(8)
-	
-	If(9)
-	
-	If(10)
-		Exit the program
-	
+		while (true) 
+			ask user
+			(
+					1. Create point
+					2. Create line
+					3. Create circle
+					4. Line segment intersection
+					5. Closest pair of points
+					6. Convex hull
+					7. Largest empty circle
+					8. Display all entities
+					9. (possibly) Change working plane
+					10. exit
+			)
+
+			If (1)
+				Let user type x and y value
+			If(2)
+				Let user type two x and y values
+			If(3)
+				Let user type x and y value and radius
+			If(4)
+				call Line Segment Intersection function()
+			If(5)
+				call Closest Pair of Pints function()
+			If(6)
+				call Convex Hull function()
+			If(7)
+				Largest empty circle function()
+			If(8)
+				display all entities
+			If(9)
+				break the while loop
+			If(10)
+				Exit the program
+
 
 Line Segment Intersection function()
 
 
-Closest Pair of Points function()
+Closest Pair of Pints function()
 
 
 Convex Hull function()
+
+Largest empty circle function()
 
 
 
