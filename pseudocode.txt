@@ -107,7 +107,7 @@ set_current_space()
 		return the new space class
 	
 Line_Segment_Intersection function(space class)
-	
+		
 
 Closest_Pair_of_Points function(space class)
 
