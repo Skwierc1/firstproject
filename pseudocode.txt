@@ -24,7 +24,8 @@ space Class
 	
 
 Main()
-	
+	create a list for spaces
+	load a file for spaces, create space, add them tot he list 
 	while ( true )
 		Ask user if they want to use already created plane or create new plane
 		If (use already created plane)
