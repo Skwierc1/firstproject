@@ -110,7 +110,17 @@ Line_Segment_Intersection function(space class)
 		
 
 Closest_Pair_of_Points function(space class)
-
+	point1
+	point2 
+	closest_distance = 1000000000000
+	for i in space.list_of_points
+		for j in space.list_of_points
+		dist_points = sqrt( (point[i][0] - point[j][0])^2 - (point[i][0] - point[j][0])^2 ) 
+		if closest_distance > dist_points  
+			closest_distance = dist_points
+			set point1 as point[i]
+			set point2 as point[i] 
+	print(point1, point2, closest_distance)
 
 Convex_Hull function(space class)
 
