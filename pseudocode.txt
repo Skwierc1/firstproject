@@ -44,22 +44,13 @@ space Class
 Main()
 	##variables ##
 		list for spaces (name space_list ?) 
-		current space
-		
+		current space 
+	##############
+	
 	call load_data function()
 	
 	while ( true )
-		Ask user if they want to use already created plane or create new plane
-		If (use already created plane)
-			S for ( i in space_list) 
-				print(space_list[i] \n) 
-			let user select a space 
-			set the space as current_space
-		Else
-			Let user create new space 
-			create new space class 
-			set the new space as current_space
-		
+		current_space = set_current_space()
 		
 		while (true) 
 			ask user
@@ -78,23 +69,23 @@ Main()
 			)
 
 			If (1)
-				call add_point function()
+				call current_space.add_point function()
 			If(2)
-				call add_line function()
+				call current_space.add_line function()
 			If(3)
-				call add_radius function()
+				call current_space.add_radius function()
 			If(4)
-				call Line_Segment_Intersection function()
+				call Line_Segment_Intersection function(current_space)
 			If(5)
-				call Closest_Pair_of_Points function()
+				call Closest_Pair_of_Points function(current_space)
 			If(6)
-				call Convex_Hull function()
+				call Convex_Hull function(current_space)
 			If(7)
-				Largest_empty_circle function()
+				Largest_empty_circle function(current_space)
 			If(8)
-				call display_all_entities function()
+				call current_space.display_all_entities function()
 			If(9)
-				update the json file 			
+				update/write the json file 			
 			If(10)
 				break the while loop
 			If(11)
@@ -102,17 +93,29 @@ Main()
 
 load_data function()
 	load a jason file for spaces, create space, add them to the space_list
-
-Line_Segment_Intersection function()
+	
+set_current_space()
+	Ask user if they want to use already created plane or create new plane
+	If (use already created plane)
+		S for ( i in space_list) 
+			print(space_list[i] \n) 
+		let user select a space 
+		return the selected space class
+	Else
+		Let user create new space 
+		create new space class 
+		return the new space class
+	
+Line_Segment_Intersection function(space class)
 	
 
-Closest_Pair_of_Points function()
+Closest_Pair_of_Points function(space class)
 
 
-Convex_Hull function()
+Convex_Hull function(space class)
 
 
-Largest_empty_circle function()
+Largest_empty_circle function(space class)
 
 
 
