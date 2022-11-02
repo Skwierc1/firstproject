@@ -4,40 +4,62 @@ Point Class
 	init(list)
 		list (point 1, point 2, point 3,,,,,,)
 
-Line Segment Class (subset of point class) 
-	init(list, list)
-		Head point (list)
-		End point (list)
+Line Segment Class
+	init(Point, Point)
+		Head point (Point class)
+		End point (Point class)
 	
-Circle Class (subset of point class)
-	center point
-	Radius 
+Circle Class
+	init(Point, radius)
+		center point (Point class)
+		Radius (int)
 	
 space Class 
 	init(name, dimention)
-		name of the space
-		dimension of the space
-		list of points
-		list of lines
-		list of circles
+		name of the space (str)
+		dimension of the space (int)
+		list_of_points (list<Point>)
+		list of lines (list<Line>)
+		list of circles (list<Circle>)
 	
-		add_point function()
+		add_point function() 
+			create a new point class with user input, and add the point to list_of_points
+			
 		add_line function()
+			create a new line class with user input, and add the point to list_of_lines
+			
 		add_circle function()
+			create a new circle class with user input, and add the point to list_of_cicles
+			
 		display_all_entities function()
-
+			for(i in list_of_points) 
+				print(point i at ------\n)
+				
+			for(i in list_of_lines) 
+				print(line i at ------\n)
+				
+			for(i in list_of_cicles) 
+				print(circle i at ------\n)
+			
 Main()
-	create a list for spaces
+	##variables ##
+		list for spaces (name space_list ?) 
+		current space
+		
 	call load_data function()
 	
 	while ( true )
 		Ask user if they want to use already created plane or create new plane
 		If (use already created plane)
-			Show a list of planes and let user select a plane
+			S for ( i in space_list) 
+				print(space_list[i] \n) 
+			let user select a space 
+			set the space as current_space
 		Else
-			Let user create new plane with dimension (name of the plane and dimension)
-
-		Get list/array of points, line, and circle for the plane
+			Let user create new space 
+			create new space class 
+			set the new space as current_space
+		
 		
 		while (true) 
 			ask user
@@ -49,9 +71,10 @@ Main()
 				5. Closest pair of points
 				6. Convex hull
 				7. Largest empty circle
-				8. Display all entities
-				9. (possibly) Change working plane
-				10. exit
+				8. Display all entities 
+				9. save the change
+				10. (possibly) Change working plane
+				11. exit
 			)
 
 			If (1)
@@ -71,12 +94,14 @@ Main()
 			If(8)
 				call display_all_entities function()
 			If(9)
-				break the while loop
+				update the json file 			
 			If(10)
+				break the while loop
+			If(11)
 				Exit the program
 
 load_data function()
-	load a file for spaces, create space, add them to the list 
+	load a jason file for spaces, create space, add them to the space_list
 
 Line_Segment_Intersection function()
 	
