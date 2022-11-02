@@ -1,31 +1,35 @@
 
 
-Point Class
-	list (point 1, point 2, point 3,,,,,,)
+Point Class 
+	init(list)
+		list (point 1, point 2, point 3,,,,,,)
 
-Line Segment Class (subset of point class)
-	Head point
-	End point
+Line Segment Class (subset of point class) 
+	init(list, list)
+		Head point (list)
+		End point (list)
 	
 Circle Class (subset of point class)
 	center point
 	Radius 
 	
-space Class
-	name of the space
-	dimension of the space
-	list of points
-	list of lines
-	list of circles
+space Class 
+	init(name, dimention)
+		name of the space
+		dimension of the space
+		list of points
+		list of lines
+		list of circles
 	
-	add point func()
-	add lines func()
-	add circles func()
-	
+		add_point function()
+		add_line function()
+		add_circle function()
+		display_all_entities function()
 
 Main()
 	create a list for spaces
-	load a file for spaces, create space, add them tot he list 
+	call load_data function()
+	
 	while ( true )
 		Ask user if they want to use already created plane or create new plane
 		If (use already created plane)
@@ -51,37 +55,39 @@ Main()
 			)
 
 			If (1)
-				Let user type x and y value
+				call add_point function()
 			If(2)
-				Let user type two x and y values
+				call add_line function()
 			If(3)
-				Let user type x and y value and radius
+				call add_radius function()
 			If(4)
-				call Line Segment Intersection function()
+				call Line_Segment_Intersection function()
 			If(5)
-				call Closest Pair of Pints function()
+				call Closest_Pair_of_Points function()
 			If(6)
-				call Convex Hull function()
+				call Convex_Hull function()
 			If(7)
-				Largest empty circle function()
+				Largest_empty_circle function()
 			If(8)
-				display all entities
+				call display_all_entities function()
 			If(9)
 				break the while loop
 			If(10)
 				Exit the program
 
+load_data function()
+	load a file for spaces, create space, add them to the list 
 
-Line Segment Intersection function()
+Line_Segment_Intersection function()
 	
 
-Closest Pair of Pints function()
+Closest_Pair_of_Points function()
 
 
-Convex Hull function()
+Convex_Hull function()
 
 
-Largest empty circle function()
+Largest_empty_circle function()
 
 
 
