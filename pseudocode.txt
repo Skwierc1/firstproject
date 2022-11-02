@@ -1,7 +1,7 @@
 
 
 Point Class
-	list (point-1, point-2,,,,,,, point-n)
+	list (point 1, point 2, point 3,,,,,,)
 
 Line Segment Class (subset of point class)
 	Head point
@@ -24,6 +24,7 @@ space Class
 	
 
 Main()
+	
 	while ( true )
 		Ask user if they want to use already created plane or create new plane
 		If (use already created plane)
