@@ -132,7 +132,7 @@ Closest_Pair_of_Points function(space class)
 
 
 Convex_Hull function(space class)
-
+	https://en.wikipedia.org/wiki/Convex_hull_algorithms
 
 Largest_empty_circle function(space class) 
 	if len(list_of_circles) >= 1 
