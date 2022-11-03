@@ -194,6 +194,9 @@ Closest_Pair_of_Points function(space class)
 
 
 Convex_Hull function(space class)
+
+	ONLY AVAILABLE FOR 2 DIMENTION SPACE
+	
 	####resource#####
 	https://en.wikipedia.org/wiki/Convex_hull_algorithms
 	#################
