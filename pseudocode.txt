@@ -10,7 +10,9 @@ Line Segment Class
 		Head_point (Point class)
 		End_point (Point class)
 		equation (<x,y,z> + t<a,b,c>) -> ((x,y,z),(a,b,c))
-		https://www.youtube.com/watch?v=JlRagTNGBF0
+		####resource#####
+		https://www.youtube.com/watch?v=JlRagTNGBF0 
+		#################
 		
 Circle Class
 	init(Point, radius)
@@ -45,10 +47,10 @@ space Class
 				print(circle i at ------\n)
 			
 Main()
-	##variables ##
-		list for spaces (name space_list ?) 
-		current space 
-	##############
+	##variables##
+	space_list
+	current_space 
+	#############
 	
 	call load_data function()
 	
@@ -119,6 +121,7 @@ Line_Segment_Intersection function(space class)
 	b_val list (b, v) 
 	exist bool
 	################# 
+	
 	for i in len(space.list_of_lines)
 		for j in len(space.list_of_lines) 
 			exist = true 
@@ -184,7 +187,9 @@ Closest_Pair_of_Points function(space class)
 
 
 Convex_Hull function(space class)
+	####resource#####
 	https://en.wikipedia.org/wiki/Convex_hull_algorithms
+	#################
 
 Largest_empty_circle function(space class) 
 	if len(list_of_circles) >= 1 
