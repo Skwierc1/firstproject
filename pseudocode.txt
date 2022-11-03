@@ -4,11 +4,13 @@ Point Class
 	init(list)
 		list (point 1, point 2, point 3,,,,,,)
 
-Line Segment Class
+Line Segment Class 
 	init(Point, Point)
 		Head point (Point class)
 		End point (Point class)
-	
+		equation (<x,y,z> + t<a,b,c>)
+		https://www.youtube.com/watch?v=JlRagTNGBF0
+		
 Circle Class
 	init(Point, radius)
 		center point (Point class)
@@ -106,9 +108,13 @@ set_current_space()
 		create new space class 
 		return the new space class
 	
-Line_Segment_Intersection function(space class)
-		
-
+Line_Segment_Intersection function(space class)  
+	#####resource######
+	https://socratic.org/questions/how-do-i-find-the-intersection-of-two-lines-in-three-dimensional-space
+	https://www.youtube.com/watch?v=N-qUfr-rz_Y
+	###################
+	
+	
 Closest_Pair_of_Points function(space class)
 	if len(list_of_points) >= 2
 		point1 
