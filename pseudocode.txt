@@ -111,7 +111,8 @@ set_current_space()
 	
 Line_Segment_Intersection function(space class)  
 	####variables#### 
-	intersection_list list
+	intersection_point list 
+	intersection_list list<intersection_point>
 	equ1 list (a,b,c)
 	equ2 list (a,b,c)
 	a_val list (a, v)
@@ -136,7 +137,9 @@ Line_Segment_Intersection function(space class)
 
 				equ2[0] = equ2[0] * equ1[0]
 				equ2[1] = equ2[1] * equ1[0]
-				equ2[2] = equ2[2] * equ1[0]
+				equ2[2] = equ2[2] * equ1[0] 
+				if(equ1[1] = -equ2[1]) 
+					exist = false
 
 				b_val[0] = equ1[1] - equ2[1]
 				b_val[1] = equ1[2] - equ2[2]
@@ -149,7 +152,14 @@ Line_Segment_Intersection function(space class)
 				a_val[0] = a_val[0]/a_val[0]
 
 				for k in range(space.dimension)
-					if (list_of_lines[i][0][k] + a_val[1] *list_of_lines[i][1][k] == list_of_lines[j][0][k] + a_val[1] *list_of_lines[j][1][k])
+					if (list_of_lines[i].equation[0][k] + a_val[1] *list_of_lines[i].equation[1][k] == list_of_lines[j].equation[0][k] + a_val[1] *list_of_lines[j].equation[1][k]) 
+					else 
+						exist = false 
+				for l in range(space.dimension)
+					intersection_point.add(list_of_lines[i].equation[l][k] + a_val[1] * list_of_lines[i].equation[l][k])
+				intersection_list.add(intersection_point)
+				intersection_point.clear
+				exist = false
 			
 	#####resource######
 	https://socratic.org/questions/how-do-i-find-the-intersection-of-two-lines-in-three-dimensional-space
