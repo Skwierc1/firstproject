@@ -197,7 +197,25 @@ Convex_Hull function(space class)
 
 	ONLY AVAILABLE FOR 2 DIMENTION SPACE
 	
+	#variables convex_points list<point>
+	# bmlm_point = get the bottom most and left most point
+	# sort points by angle with respect to the bmlm_point
+	#convex_points.add the bmlm_point
+	#
+	#for i in point list 
+		while there are points 
+			check if i is clockwise or not 
+				if it is convex_points.remove the previous one 
+			if not, convex_points.add the point to stack 
+	print convex_points
+	
+	
+	
+	
+	
+	
 	####resource#####
+	https://www.youtube.com/watch?v=B2AJoQSZf4M
 	https://en.wikipedia.org/wiki/Convex_hull_algorithms
 	#################
 
