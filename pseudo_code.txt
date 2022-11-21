@@ -1,8 +1,12 @@
 Point Class 
-	init(list)
-		list (point 1, point 2, point 3,,,,,,)
+	# point on every axis  
 
-Line Segment Class 
+	init(list)
+		list (point on 1st axis, point 2nd axis, point on 3rd axis,,,,,,)
+
+Line Segment Class
+	#head point, end point, and equation for the line
+	
 	init(Point, Point)
 		Head_point (Point class)
 		End_point (Point class)
@@ -11,12 +15,16 @@ Line Segment Class
 		https://www.youtube.com/watch?v=JlRagTNGBF0 
 		#################
 		
-Circle Class
+Circle Class 
+	# center point, radius
+	
 	init(Point, radius)
 		center point (Point class)
 		Radius (int)
 	
 space Class 
+	#name of the space, number of dimention, list of points, list of lines, list of circles
+	
 	init(name, dimention)
 		name (str)
 		dimension(int)
@@ -94,7 +102,7 @@ Main()
 				Exit the program
 
 load_data function()
-	load a jason file for spaces, create space, add them to the space_list
+	load a jason/text/csv/...any file for spaces, create space, add them to the space_list
 	
 set_current_space()
 	Ask user if they want to use already created plane or create new plane
@@ -111,7 +119,7 @@ set_current_space()
 Line_Segment_Intersection function(space class)  
 	if len(space.list_of_lines) >= 2
 		####variables#### 
-		intersection_point list 
+		intersection_point list (x,y,z)
 		intersection_list list<intersection_point>
 		equ1 list (a,b,c)
 		equ2 list (a,b,c)
@@ -173,10 +181,12 @@ Line_Segment_Intersection function(space class)
 	
 Closest_Pair_of_Points function(space class)
 	if len(list_of_points) >= 2
-		point1 
-		point2 
+		point1 list_of_points[0]
+		point2 list_of_points[1]
+		dist_points = 0
+		
 		for k in len(space.dimention)
-			dist_points = dist_points + (list_of_points[0][k] - list_of_points[1][k])^2
+			dist_points = dist_points + (list_of_points[0][k] - list_of_points[1][k])^2)
 		dist_points = sqrt(dist_points)
 		closest_distance = dist_points 
 		for i in len(space.list_of_points)
@@ -189,9 +199,12 @@ Closest_Pair_of_Points function(space class)
 					closest_distance = dist_points
 					set point1 as list_of_points[i]
 					set point2 as list_of_points[j] 
-		print(point1, point2, closest_distance) 
-	else print "needs more than two points"
-
+		print(closest points are % and %, and length is %. , point1, point2, closest_distance) 
+	else print "needs more than two points" 
+	
+	####resource#####
+	https://brilliant.org/wiki/3d-coordinate-geometry-distance/
+	#################
 
 Convex_Hull function(space class)
 
@@ -209,11 +222,6 @@ Convex_Hull function(space class)
 			if not, convex_points.add the point to stack 
 	print convex_points
 	
-	
-	
-	
-	
-	
 	####resource#####
 	https://www.youtube.com/watch?v=B2AJoQSZf4M
 	https://en.wikipedia.org/wiki/Convex_hull_algorithms
@@ -227,7 +235,7 @@ Largest_empty_circle function(space class)
 			circle_size = 3.1415 * list_of_circles.radius^2
 			if circle_size >= l_circle_size
 				l_circle_size = circle_size
-				set l_circle as list_of_circles[i]
+				set list_of_circles[i] as l_circle
 		print(l_circle, l_circle_size) 
 	else print "no circle found"
 
