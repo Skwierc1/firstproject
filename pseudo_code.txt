@@ -31,7 +31,7 @@ space Class
 		list_of_points (list<Point>)
 		list_of_lines (list<Line>)
 		list_of_circles (list<Circle>)
-	
+
 		add_point function() 
 			create a new point class with user input, and add the point to list_of_points
 			
