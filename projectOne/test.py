@@ -129,3 +129,39 @@ def test_closestPairOfPoints():
     
     points = [point1, point2, point3, point4, point5, point6, point7, point8, point9, point10, point11, point12]
     assert project1.closestPairOfPoints(points) == (point1, point10)
+
+
+# test for convexHull function - monotone chain algorithm
+# testing requirements:
+#     # convexHull(points) - Return the convex hull of the points.
+def test_monoCovexHull():
+    # Test 1
+    point1 = project1.Point(1, 2)
+    point2 = project1.Point(3, 4)
+    point3 = project1.Point(5, 6)
+    point4 = project1.Point(7, 8)
+    point5 = project1.Point(9, 10)
+    point6 = project1.Point(11, 12)
+    point7 = project1.Point(13, 14)
+    point8 = project1.Point(15, 16)
+    point9 = project1.Point(17, 18)
+    point10 = project1.Point(19, 20)
+    point11 = project1.Point(21, 22)
+
+    points = [point1, point2, point3, point4, point5, point6, point7, point8, point9, point10, point11]
+    assert project1.convexHull(points) == [point1, point11]
+
+    # Test 2
+    point1 = project1.Point(3, 4)
+    point2 = project1.Point(1, 2)
+    point3 = project1.Point(2, 1)
+    point4 = project1.Point(4, 3)
+    point5 = project1.Point(5, 6)
+    point6 = project1.Point(7, 8)
+    point7 = project1.Point(9, 10)
+
+    points = [point1, point2, point3, point4, point5, point6, point7]
+    assert project1.convexHull(points) == [point2, point3, point4, point7]
+
+
+    

@@ -31,7 +31,15 @@ class Point:
         self.y = y
 
     def __eq__(self, other):
-        return self.x == other.x and self.y == other.y
+        # if none, return false
+        if other is None:
+            return False
+        # if not a point, return false
+        if not isinstance(other, Point):
+            return False
+        # if x and y are equal, return true
+        if self.x == other.x and self.y == other.y:
+            return True
 
     def __repr__(self):
         return f"({self.x}, {self.y})"
@@ -186,6 +194,63 @@ def closestPairOfPoints(points):
 
     # return the closest points
     return closestPoints
+
+
+# convexHull function - monotone chain algorithm
+# testing requirements:
+#     # convexHull(points) - Return a list of points that form the convex hull of the given set of points.
+def convexHull(points):
+    # sort the points by x-coordinate
+    points.sort(key=lambda point: point.get_x())
+
+    # initialize the upper and lower hulls
+    upperHull = []
+    lowerHull = []
+
+    # loop through the points
+    for point in points:
+        # while the upper hull has at least 2 points and the cross product of the last 2 points and the current point is less than or equal to 0
+        while len(upperHull) >= 2 and crossProduct(upperHull[-2], upperHull[-1], point) <= 0:
+            # remove the last point from the upper hull
+            upperHull.pop()
+
+        # append the current point to the upper hull
+        upperHull.append(point)
+
+    # loop through the points in reverse
+    for point in reversed(points):
+        # while the lower hull has at least 2 points and the cross product of the last 2 points and the current point is less than or equal to 0
+        while len(lowerHull) >= 2 and crossProduct(lowerHull[-2], lowerHull[-1], point) <= 0:
+            # remove the last point from the lower hull
+            lowerHull.pop()
+
+        # append the current point to the lower hull
+        lowerHull.append(point)
+
+    # remove the last point from the upper hull
+    upperHull.pop()
+
+    # remove the last point from the lower hull
+    lowerHull.pop()
+
+    # return the upper hull + lower hull
+    return upperHull + lowerHull
+
+# crossProduct function is a helper function for convexHull found above
+# testing requirements:
+#     # crossProduct(point1, point2, point3) - Return the cross product of the vectors formed by the given points.
+def crossProduct(point1, point2, point3):
+    # get the coordinates of the points
+    x1 = point1.get_x()
+    y1 = point1.get_y()
+    x2 = point2.get_x()
+    y2 = point2.get_y()
+    x3 = point3.get_x()
+    y3 = point3.get_y()
+
+    # return the cross product
+    return (x2 - x1) * (y3 - y1) - (y2 - y1) * (x3 - x1)
+
 
 def main():
     pass
