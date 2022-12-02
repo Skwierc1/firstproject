@@ -56,10 +56,12 @@ convexHull
 	add the bottom most and left most point to the stack list
 	go through the sorted points with for loop
 	for i in sorted list
+	
 		if the point is counter clockwise respect to the top of the stack list, then add the point to stack list then move on to the next point in the sorted list
+		
 		if the point is clockwise respect to the top of the stack list, then pop a point from the stack list. 
-			keep popping form the stack list until the new point is clockwise respect to the top of the stack list. 
-			add the point to the stack list, then move on to the next point.
+		keep popping form the stack list until the new point is clockwise respect to the top of the stack list. 
+		add the point to the stack list, then move on to the next point.
 	
 	
 
