@@ -14,7 +14,7 @@
 
 # libraries / modules
 import math
-
+import copy
 
 # Point class
 # testing requirements:
@@ -200,45 +200,60 @@ def closestPairOfPoints(points):
 # testing requirements:
 #     # convexHull(points) - Return a list of points that form the convex hull of the given set of points.
 def convexHull(points):
-    # sort the points by x-coordinate
-    points.sort(key=lambda point: point.get_x())
+    #find points that have the lowest y value
+    bottom_points = [points[0]]
+    for i in points:
+        if bottom_points[0].get_y() > i.get_y():
+            bottom_points.clear()
+            bottom_points.append(i)
+        elif bottom_points[0].get_y() == i.get_y():
+            bottom_points.append(i)
+    #find the point that has the lowest x and y value
+    bottom_left_point = bottom_points[0]
+    for j in bottom_points:
+        if bottom_left_point.get_x() > j.get_x():
+            bottom_left_point = j
 
-    # initialize the upper and lower hulls
-    upperHull = []
-    lowerHull = []
+    #sort the points list
+    #in order of angle respective to the bottom left point
+    points.sort(key=lambda point: math.atan2((point.get_y()-bottom_left_point.get_y()),(point.get_x()-bottom_left_point.get_x())))       
+   
+    #list for convex hull points
+    convexHullPoints = []
 
-    # loop through the points
-    for point in points:
-        # while the upper hull has at least 2 points and the cross product of the last 2 points and the current point is less than or equal to 0
-        while len(upperHull) >= 2 and crossProduct(upperHull[-2], upperHull[-1], point) <= 0:
-            # remove the last point from the upper hull
-            upperHull.pop()
+    #add the bottom left point to the convex hull points list
+    convexHullPoints.append(points[0])
 
-        # append the current point to the upper hull
-        upperHull.append(point)
+    # remove the bottom left point from the points list
+    points.pop(0)
+    
 
-    # loop through the points in reverse
-    for point in reversed(points):
-        # while the lower hull has at least 2 points and the cross product of the last 2 points and the current point is less than or equal to 0
-        while len(lowerHull) >= 2 and crossProduct(lowerHull[-2], lowerHull[-1], point) <= 0:
-            # remove the last point from the lower hull
-            lowerHull.pop()
+    
+    for k in range(len(points)):
+        nextp = points.pop(0)
+        clockw = 1
+        #while loop until finding the next point
+        while clockw == 1:
+            #orip -> origin point
+            #prep -> previous point
+            #nextp -> next point
+            prep = convexHullPoints[-1]
+            #if there is only one point in the convex hull point list
+            #set the point as orip and prep
+            if len(convexHullPoints) == 1:
+                orip = convexHullPoints[-1]
+            else:    
+                orip = convexHullPoints[-2]
+            #call crossProduct function
+            clockw = crossProduct(orip,prep,nextp)
+            #if clockwise -> remove the prep from the convex hull list
+            if clockw == 1:
+                convexHullPoints.pop()
+        # if counter clockwise -> add the nextp to the convex hull list
+        convexHullPoints.append(nextp)
 
-        # append the current point to the lower hull
-        lowerHull.append(point)
+    return convexHullPoints
 
-    # remove the last point from the upper hull
-    upperHull.pop()
-
-    # remove the last point from the lower hull
-    lowerHull.pop()
-
-    # return the upper hull + lower hull
-    return upperHull + lowerHull
-
-# crossProduct function is a helper function for convexHull found above
-# testing requirements:
-#     # crossProduct(point1, point2, point3) - Return the cross product of the vectors formed by the given points.
 def crossProduct(point1, point2, point3):
     # get the coordinates of the points
     x1 = point1.get_x()
@@ -249,11 +264,53 @@ def crossProduct(point1, point2, point3):
     y3 = point3.get_y()
 
     # return the cross product
-    return (x2 - x1) * (y3 - y1) - (y2 - y1) * (x3 - x1)
+    ans =  (x2 - x1) * (y3 - y1) - (y2 - y1) * (x3 - x1)
+    
+    #clockwise
+    if ans < 0:
+        return 1
+    #counterclockwise
+    if ans > 0:
+        return -1
+    return -1
+
+def largestEmptyCircle(circles):
+    #create point list for center of circles
+    pointlist = []
+    for i in circles:
+        pointlist.append(i.get_center())
+    #deepcopy the pointlist for convexHull finc
+    pointlisttemp= copy.deepcopy(pointlist)
+
+    #get the convexHull point list
+    convexHullList = convexHull(pointlisttemp)
+    
+    #get the circles that's in convex hull (excluding the circles with points that's in convex hull point list
+    circle_in_c = [x for x in circles if x.get_center() not in convexHullList]
+    
+    #set circle and circle size as null first
+    l_circle = None
+    l_circle_r = 0
+    for j in circle_in_c:
+        include_p = False
+        for k in pointlist:
+            #if the point and the center of the circle is not the same
+            if j.get_center() != k:  
+                #if radius is smaller than the distance between the center and a point
+                if (j.get_radius())> math.sqrt(((k.get_x() - j.get_center().get_x())**2) + ((k.get_y() - j.get_center().get_y())**2)):
+                    include_p = True
+        #if there is no point in the circle            
+        if include_p == False:
+            #if the circle is larger than any other circle, set the circle
+            if l_circle_r < j.get_radius():
+                l_circle = j
+
+    return l_circle
+
 
 
 def main():
-    pass
+   pass
 
     
 

@@ -136,32 +136,56 @@ def test_closestPairOfPoints():
 #     # convexHull(points) - Return the convex hull of the points.
 def test_monoCovexHull():
     # Test 1
-    point1 = project1.Point(1, 2)
-    point2 = project1.Point(3, 4)
-    point3 = project1.Point(5, 6)
-    point4 = project1.Point(7, 8)
-    point5 = project1.Point(9, 10)
-    point6 = project1.Point(11, 12)
-    point7 = project1.Point(13, 14)
-    point8 = project1.Point(15, 16)
-    point9 = project1.Point(17, 18)
-    point10 = project1.Point(19, 20)
-    point11 = project1.Point(21, 22)
+    point1 = project1.Point(1, 1)
+    point2 = project1.Point(3, 0)
+    point3 = project1.Point(3, 2)
+    point4 = project1.Point(5, 1)
+    point5 = project1.Point(0, 3)
+    point6 = project1.Point(2, 4)
+    point7 = project1.Point(5, 4)
+    point8 = project1.Point(1, 5)
+    point9 = project1.Point(2, 6)
+    point10 = project1.Point(4, 5)
+    point11 = project1.Point(2, 3)
 
     points = [point1, point2, point3, point4, point5, point6, point7, point8, point9, point10, point11]
-    assert project1.convexHull(points) == [point1, point11]
-
+    assert project1.convexHull(points) == [point2, point4, point7, point10, point9, point8, point5, point1]
+ 
     # Test 2
-    point1 = project1.Point(3, 4)
-    point2 = project1.Point(1, 2)
-    point3 = project1.Point(2, 1)
-    point4 = project1.Point(4, 3)
-    point5 = project1.Point(5, 6)
-    point6 = project1.Point(7, 8)
-    point7 = project1.Point(9, 10)
+    point1 = project1.Point(1,0)
+    point2 = project1.Point(2,1)
+    point3 = project1.Point(3,1)
+    point4 = project1.Point(1,2)
+    point5 = project1.Point(2,3)
+    point6 = project1.Point(2,4)
+    point7 = project1.Point(0,2)
 
     points = [point1, point2, point3, point4, point5, point6, point7]
-    assert project1.convexHull(points) == [point2, point3, point4, point7]
+    assert project1.convexHull(points) == [point1, point3, point6, point7]
+
+def test_largestEmptyCircle():
+    # Test 1
+    point1 = project1.Point(1,0)
+    point2 = project1.Point(2,1)
+    point3 = project1.Point(3,1)
+    point4 = project1.Point(1,2)
+    point5 = project1.Point(2,3)
+    point6 = project1.Point(2,4)
+    point7 = project1.Point(0,2)
 
 
+    circle1 = project1.Circle(point1,3)
+    circle2 = project1.Circle(point2,1)
+    circle3 = project1.Circle(point3,2)
+    circle4 = project1.Circle(point4,5)
+    circle5 = project1.Circle(point5,3)
+    circle6 = project1.Circle(point6,1)
+    circle7 = project1.Circle(point7,1)
     
+    circles = [circle1, circle2, circle3, circle4, circle5, circle6, circle7]
+    assert project1.largestEmptyCircle(circles) == circle2
+
+
+
+
+
