@@ -1,0 +1,50 @@
+class points:
+	init() -> Create a point with the given x and y coordinates.
+	eq() -> compare with the another point and see if the point is on the same spot or not. return boolean value
+	repr() -> Return a string representation of the point.
+	get_point() -> Return both x and y coordinate of the point
+	get_x() -> Return the x coordinate of the point.	
+	get_y() -> Return the y coordinate of the point.
+	set_x() -> set the x coordiate of the point
+	set_y() -> set the y coordinate of th epoint
+
+
+class LineSegment:
+	init() - Create a line segment with the given endpoints.
+	repr() -> Return a string representation of the line segment.
+	get_point1() -> Return the first endpoint of the line segment.
+	get_point2() -> Return the second endpoint of the line segment.
+	set_point1() -> Set the first endpoint of the line segment.
+	set_point2() -> Set the second endpoint of the line segment.
+	
+class Circle:
+	init() -> Create a circle with the given center and radius.
+	get_center() -> Return the center of the circle (point class).
+	get_radius() -> Return the radius of the circle.
+	set_center() -> Set the center of the circle (point class).
+	set_radius() -> Set the radius of the circle.
+	rep() -> Return a string representation of the circle.
+
+def lineSegmentIntersection():
+	Return the intersection point of the two line segments, or None if they do not intersect.
+
+def distance():
+	Return the distance between the two points.
+
+def closestPairOfPoints():
+	Return a tuple containing the two closest points in the given set of points.
+
+def convexHull():
+	Return a list of points that form the convex hull of the given set of points.
+
+def crossProduct():
+	Return the cross product of the vectors formed by the given points.
+
+def main():
+	show menu and call a function depends on what a user pick
+		1)find line segment intersections
+		2)find the closest pair of points
+		3)find the convex hull
+		
+
+call main()
