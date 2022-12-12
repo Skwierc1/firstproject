@@ -39,6 +39,12 @@ def convexHull():
 
 def crossProduct():
 	Return the cross product of the vectors formed by the given points.
+	
+def create_test_obj() 
+	create and return list of points, lists, and circles 
+	
+def show_obj() 
+	return string value of list of points, lists, and circles
 
 def main():
 	show menu and call a function depends on what a user pick
@@ -46,5 +52,6 @@ def main():
 		2)find the closest pair of points
 		3)find the convex hull
 		
+
 
 call main()
