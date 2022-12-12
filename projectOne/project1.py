@@ -308,9 +308,69 @@ def largestEmptyCircle(circles):
     return l_circle
 
 
+#create list of points, lines, and circles for test
+def create_test_obj():
+    point1 = Point(3, 0)
+    point2 = Point(5, 2)
+    point3 = Point(4, 4)
+    point4 = Point(1, 5)
+    point5 = Point(0, 3)
+    point6 = Point(2, 3)
+    points = [point1, point2, point3, point4, point5, point6]
+   
+    lineSegment1 = LineSegment(point1, point2)
+    lineSegment2 = LineSegment(point3, point4)
+    lineSegment3 = LineSegment(point5, point6)
+    lineSegments = [lineSegment1, lineSegment2, lineSegment3]
+
+
+    circle1 = Circle(point1,4)
+    circle2 = Circle(point2,3)
+    circle3 = Circle(point3,2)
+    circle4 = Circle(point4,3)
+    circle5 = Circle(point5,3)
+    circle6 = Circle(point6,1)
+    circles = [circle1, circle2, circle3, circle4, circle5, circle6]
+
+    #return list of points, lines, and circles
+    return points, lineSegments, circles
+
+#return string value of all the points, lines, and circles
+def show_obj(points, lineSegments, circles):
+    
+    # get points's string value
+    obj_list = "Points: "
+    for i in points:
+        obj_list += i.__repr__()
+        obj_list += ", "
+    obj_list = obj_list.rstrip(obj_list[-1]) 
+    obj_list = obj_list.rstrip(obj_list[-1])
+
+    # get lines's string value
+    obj_list += "\nLines: "
+    for i in lineSegments:
+        obj_list += i.__repr__()
+        obj_list += ", "
+    obj_list = obj_list.rstrip(obj_list[-1]) 
+    obj_list = obj_list.rstrip(obj_list[-1])
+
+    #get circles's string value
+    obj_list += "\nCircles: "
+    for i in circles:
+        obj_list += i.__repr__()
+        obj_list += ", "
+    obj_list = obj_list.rstrip(obj_list[-1]) 
+    obj_list = obj_list.rstrip(obj_list[-1]) 
+    obj_list += "\n"
+
+    #return the string
+    return obj_list
+
 
 def main():
-   pass
+    test_points, test_lineSegments, test_Circles = create_test_obj()
+    print(show_obj(test_points, test_lineSegments, test_Circles))
+
 
     
 

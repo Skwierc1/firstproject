@@ -186,6 +186,26 @@ def test_largestEmptyCircle():
     assert project1.largestEmptyCircle(circles) == circle2
 
 
+def test_show_obj():
+
+    point1 = project1.Point(1,0)
+    point2 = project1.Point(2,1)
+    point3 = project1.Point(3,1)
+    point4 = project1.Point(1,2)
+    points = [point1,point2,point3,point4]
+
+    lineSegment1 = project1.LineSegment(point1, point2)
+    lineSegment2 = project1.LineSegment(point3, point4)
+    lineSegments = [lineSegment1,lineSegment2]
+
+    circle1 = project1.Circle(point1,3)
+    circle2 = project1.Circle(point2,1)
+    circle3 = project1.Circle(point3,2)
+    circle4 = project1.Circle(point4,5)
+    circles = [circle1,circle2, circle3, circle4]
+    assert project1.show_obj(points, lineSegments,circles) == "Points: (1, 0), (2, 1), (3, 1), (1, 2)\nLines: LineSegment((1, 0), (2, 1)), LineSegment((3, 1), (1, 2))\nCircles: Circle((1, 0), 3), Circle((2, 1), 1), Circle((3, 1), 2), Circle((1, 2), 5)\n"
+
+
 
 
 
